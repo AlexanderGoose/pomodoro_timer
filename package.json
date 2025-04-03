@@ -1,0 +1,28 @@
+{
+  "name": "pomodoro_timer",
+  "version": "1.0.0",
+  "description": "first electron app!",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/AlexanderGoose/pomodoro_timer.git"
+  },
+  "keywords": [
+    "pomodoro",
+    "timer",
+    "electron"
+  ],
+  "author": "Alexander Gustafson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexanderGoose/pomodoro_timer/issues"
+  },
+  "homepage": "https://github.com/AlexanderGoose/pomodoro_timer#readme",
+  "devDependencies": {
+    "electron": "^35.1.3"
+  }
+}
