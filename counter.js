@@ -1,7 +1,11 @@
+// TODO: add a pomo tracker, ex: 1/7 in top right corner
+// add a method to add a task during the current pomo
+
 
 // let startingMinutes = document.getElementById("userTimerLen");
-const startingMinutes = 45;
+const startingMinutes = 0.1;
 let time = startingMinutes * 60; // converts into minutes
+let countdownInterval = null;
 
 const countdownEl = document.getElementById("countdown");
 
@@ -9,22 +13,53 @@ const countdownEl = document.getElementById("countdown");
 
 document.addEventListener('DOMContentLoaded', () => {
     const startTimer = document.getElementById('startTimer');
+    const pauseTimer = document.getElementById('pauseTimer');
+    const resetTimer = document.getElementById('resetTimer');
     // const pauseTimer = document.getElementById('pauseTimer');
 
     startTimer.addEventListener('click', () => {
-        setInterval(updateCountdown, 1000);
+        if (!countdownInterval) {
+            countdownInterval = setInterval(updateCountdown, 1000);
+        }
     })
 
-    // pause and reset not yet implemented
+    pauseTimer.addEventListener('click', () => {
+        if (countdownInterval) {
+          clearInterval(countdownInterval);
+          countdownInterval = null;
+        }
+      });
+
     resetTimer.addEventListener('click', () => {
-        clearInterval(updateCountdown, 0);
+        clearInterval(countdownInterval);
+        countdownInterval = null;
+        time = startingMinutes * 60;
+        updateCountdown(); // refreshes the display
     })
 })
 
 function updateCountdown() {
-    const minutes = Math.floor(time / 60);
+    let minutes = Math.floor(time / 60);
     let seconds = time % 60;
 
-    countdownEl.innerHTML = `${minutes}: ${seconds}`;
+    if (time <= 0) {
+        clearInterval(countdownInterval); // stop the interval
+        countdownEl.innerHTML = "00:00";
+        if (window.backgroundAudio) {
+          window.backgroundAudio.pause();
+          window.backgroundAudio.currentTime = 0;
+        }
+        // play ending beep
+        let endAudio = new Audio('sounds/endBeep.mp3')
+        endAudio.play();
+
+        return; // stop the function
+      }
+
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
+
+    countdownEl.innerHTML = `${minutes}:${seconds}`;
     time--;
 }

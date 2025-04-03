@@ -1,0 +1,43 @@
+body {
+    background-color: #ebf6f5;
+    color: #5cbdb9;
+    font-family: 'Tahoma', sans-serif;
+}
+
+#countdown {
+    font-size: 125px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    background-color: #fbe3e8;
+    color: black;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #5cbdb9;
+    color: #fbe3e8;
+}
+
+button:active {
+    transform: scale(0.95);
+    background-color: #5cbdb9;
+  }
+
+.timerButtons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.soundButtons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
