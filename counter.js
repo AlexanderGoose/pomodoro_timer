@@ -3,7 +3,7 @@
 
 
 // let startingMinutes = document.getElementById("userTimerLen");
-const startingMinutes = 0.1;
+const startingMinutes = 30;
 let time = startingMinutes * 60; // converts into minutes
 let countdownInterval = null;
 
@@ -41,6 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
 function updateCountdown() {
     let minutes = Math.floor(time / 60);
     let seconds = time % 60;
+
+    if (time == 300) {
+        let fiveMinuteWarning = new Audio('sounds/fiveMinute.mp3')
+        fiveMinuteWarning.play();
+    }
 
     if (time <= 0) {
         clearInterval(countdownInterval); // stop the interval

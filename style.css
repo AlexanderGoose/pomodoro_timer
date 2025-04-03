@@ -1,32 +1,48 @@
+@font-face {
+    font-family: 'Minecraft';
+    src: url('fonts/Minecraft.ttf') format('truetype');
+  }
+
 body {
-    background-color: #ebf6f5;
-    color: #5cbdb9;
-    font-family: 'Tahoma', sans-serif;
+    background-color: #12343b;
+    color: #e1b382;
+    font-family: 'Minecraft', monospace;
+    image-rendering: pixelated;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 #countdown {
-    font-size: 125px;
+    font-size: 100px;
     text-align: center;
     padding: 0;
     margin: 0;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
 button {
-    background-color: #fbe3e8;
-    color: black;
+    background-color: #2d545e;
+    color: #e1b382;
+    border-color: #c89666;
     border-radius: 8px;
     padding: 5px;
+    font-family: 'Minecraft', monospace;
+    image-rendering: pixelated;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
 }
 
 button:hover {
     transform: scale(1.05);
-    background-color: #5cbdb9;
-    color: #fbe3e8;
+    background-color: #c89666;
+    color: #12343b;
 }
 
 button:active {
     transform: scale(0.95);
-    background-color: #5cbdb9;
+    background-color: #c89666;
   }
 
 .timerButtons {
