@@ -4,7 +4,7 @@ const soundPaths = [
   'sounds/birdsAndRainShrunk.mp3',
   'sounds/nightShrunk.mp3',
   'sounds/nycSubwayShrunk.mp3',
-  'sounds/windShrunk.mp3'
+  'sounds/windShrunk.mp3',
 ]
 
 const soundNames = ['fire','rain','birds','night','subway','wind'
@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn = document.getElementById('nextBtn');
 
   playBtn.addEventListener('click', () => {
+    audio.loop = true; 
     audio.play();
   });
 

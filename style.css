@@ -39,8 +39,7 @@ body {
     text-align: center;
     padding: 0;
     margin: 0;
-    /* margin-top: 30px; */
-    /* margin-bottom: 10px; */
+    width: 200px;
 }
 
 button {
@@ -55,14 +54,6 @@ button {
     -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: grayscale;
     font-size: 16px;
-    /* text-align: center; */
-    
-    /* align-items: center;
-    display: flex;
-    justify-content: center; */
-    /* line-height: 1; */
-
-    /* margin: 0; */
 }
 
 button:hover {
@@ -76,15 +67,4 @@ button:active {
     background-color: #c89666;
   }
 
-/* .timerButtons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.soundButtons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-} */
 
