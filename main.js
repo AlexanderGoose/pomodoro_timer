@@ -5,17 +5,13 @@ const path = require('path');
 function createMainWindow() {
     const mainWindow = new BrowserWindow({
         title: 'title',
-        width: 500,
-        height: 300
+        width: 425,
+        height: 225,
+        alwaysOnTop: true,
+        resizable: false,
+        backgroundColor: '#e1b382',
+        titleBarStyle: 'default'
     });
-
-    // const startUrl = url.format({
-    //     pathname: path.join(__dirname, 'index.html'),
-
-    //     protocol: 'file'
-    // })
-
-    // mainWindow.loadURL(startUrl);
 
     mainWindow.loadFile('index.html')
 }
